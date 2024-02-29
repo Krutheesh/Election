@@ -1,9 +1,11 @@
-import app from "./app.js";
+import app from "./src/app.js";
+
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 
 (async () => {
+  
   try {
     await mongoose.connect(process.env.MONGODB_URL);
     app.on("error", (err) => {
