@@ -100,6 +100,20 @@ export const getProfile = asyncHandler(async (req,res) => {
  
  });
 
+ export const getAllUsers = asyncHandler(async (req,res) => {
+  console.log("user details")
+  
+  const userInfo = await User.find({})
+  console.log(userInfo)
+
+  res.status(400).json({
+    success:true,
+    userInfo
+  })
+   
+ 
+ });
+
 
  export const forgotPassword = asyncHandler(async (req,res) => {
  const {email} = req.body;
